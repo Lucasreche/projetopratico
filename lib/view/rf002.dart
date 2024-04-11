@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 class RF002 extends StatefulWidget {
   const RF002({super.key});
-
   @override
   State<RF002> createState() => _RF002State();
 }
-
 class _RF002State extends State<RF002> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nomeController = TextEditingController();
@@ -15,7 +13,6 @@ class _RF002State extends State<RF002> {
   final TextEditingController _telefoneController = TextEditingController();
   final TextEditingController _senhaController = TextEditingController();
   final TextEditingController _confirmaSenhaController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +143,6 @@ class _RF002State extends State<RF002> {
       ),
     );
   }
-
   @override
   void dispose() {
     _nomeController.dispose();

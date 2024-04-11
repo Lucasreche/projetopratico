@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'shopping_item.dart'; // Substitua pelo caminho correto para sua classe ShoppingItem
+import 'shopping_item.dart';
 
 class CustomSearchDelegate extends SearchDelegate<ShoppingItem> {
   final Map<String, List<ShoppingItem>> shoppingLists;

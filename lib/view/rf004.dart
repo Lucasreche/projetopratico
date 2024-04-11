@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 
 class RF004 extends StatefulWidget {
   const RF004({super.key});
-
   @override
   State<RF004> createState() => _RF004State();
 }
-
 class _RF004State extends State<RF004> {
   @override
   Widget build(BuildContext context) {
     // Obtém a largura da tela
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sobre o App'),

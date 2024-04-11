@@ -6,24 +6,19 @@ class ListDetailsScreen extends StatefulWidget {
   final List<ShoppingItem> items;
   final void Function(ShoppingItem) onAddItem;
   final void Function(ShoppingItem, int) onEditItem;
-
   const ListDetailsScreen({
     super.key,
     required this.items,
     required this.onAddItem,
     required this.onEditItem, required this.listName,
   });
-
-
   @override
   State<ListDetailsScreen> createState() => _ListDetailsScreenState();
 }
-
 class _ListDetailsScreenState extends State<ListDetailsScreen> {
   void _showEditItemDialog(ShoppingItem item, int index) {
     TextEditingController nameController = TextEditingController(text: item.name);
     TextEditingController quantityController = TextEditingController(text: item.quantity.toString());
-
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -53,8 +48,6 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
               onPressed: () {
                 // Fechar o diálogo
                 Navigator.of(context).pop();
-
-                // Se o índice é maior ou igual ao tamanho da lista, é um novo item.
                 if (index >= widget.items.length) {
                   setState(() {
                     // Adicionando o novo item à lista
@@ -74,7 +67,6 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
                 }
               },
             ),
-
           ],
         );
       },
@@ -103,7 +95,6 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          // Chama o diálogo para adicionar um novo item, com índice fora do alcance para representar um novo item.
           _showEditItemDialog(ShoppingItem(name: '', quantity: 1, isBought: false), widget.items.length);
         },
       ),
