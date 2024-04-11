@@ -24,7 +24,7 @@ Widget buildLeading(BuildContext context) {
   return IconButton(
     icon: const Icon(Icons.arrow_back),
     onPressed: () {
-      close(context, ShoppingItem(name: 'Nome do Item', quantity: 1, isBought: false)); // Apenas um argumento necessário aqui
+      close(context, ShoppingItem(name: 'Nome do Item', quantity: 1, isBought: false)); 
     },
   );
 }

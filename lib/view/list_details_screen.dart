@@ -59,7 +59,6 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
                     widget.items.add(newItem);
                   });
                 } else {
-                  // Atualizando um item existente
                   setState(() {
                     widget.items[index].name = nameController.text;
                     widget.items[index].quantity = int.tryParse(quantityController.text) ?? 1;
@@ -72,7 +71,6 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
       },
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
