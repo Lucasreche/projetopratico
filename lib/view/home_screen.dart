@@ -7,7 +7,6 @@ import 'shopping_item.dart'; // Caminho atualizado para ShoppingItem
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -163,8 +162,8 @@ void _addItemToList(String listName) {
                   quantity: int.tryParse(itemQuantityController.text) ?? 1,
                 ),
               );
-              Navigator.pop(context); // Fecha o diálogo
-              setState(() {}); // Atualiza a UI
+              Navigator.pop(context); 
+              setState(() {}); 
             },
             child: const Text('Adicionar'),
           ),
