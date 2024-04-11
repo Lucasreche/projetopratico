@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:projetopratico/view/custom_search_delegate.dart';
 import 'package:projetopratico/view/list_details_screen.dart';
@@ -9,12 +11,10 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   // Mapa para armazenar os nomes das listas e os itens correspondentes.
   Map<String, List<ShoppingItem>> shoppingLists = {};
   List<ShoppingItem> searchResults = [];
-
   // Método para criar uma nova lista de compras.
   void _createNewShoppingList() {
     TextEditingController newListNameController = TextEditingController();
@@ -53,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
   }
-
   // Método para editar uma lista de compras.
 void _editShoppingList(String listName) {
   if (!shoppingLists.containsKey(listName)) return; // Verifica se a lista existe.
@@ -91,8 +90,6 @@ void _editShoppingList(String listName) {
     },
   );
 }
-
-
 void _removeShoppingList(String listName) {
   // Mostra um diálogo de confirmação antes de remover a lista
   showDialog(
@@ -125,13 +122,9 @@ void _removeShoppingList(String listName) {
     },
   );
 }
-
-
-
 void _addItemToList(String listName) {
   TextEditingController itemNameController = TextEditingController();
   TextEditingController itemQuantityController = TextEditingController();
-
   showDialog(
     context: context,
     builder: (context) {
@@ -170,7 +163,6 @@ void _addItemToList(String listName) {
                   quantity: int.tryParse(itemQuantityController.text) ?? 1,
                 ),
               );
-              
               Navigator.pop(context); // Fecha o diálogo
               setState(() {}); // Atualiza a UI
             },
@@ -181,15 +173,12 @@ void _addItemToList(String listName) {
     },
   );
 }
-
-
- void _editItemInList(String listName, String itemName) {
+  void _editItemInList(String listName, String itemName) {
   // Primeiro, encontra a lista de compras pelo nome.
   if (!shoppingLists.containsKey(listName)) {
     // A lista especificada não existe.
     return;
   }
-  
   List<ShoppingItem>? items = shoppingLists[listName];
   // Encontra o item específico dentro da lista.
   int itemIndex = items!.indexWhere((item) => item.name == itemName);
@@ -197,13 +186,10 @@ void _addItemToList(String listName) {
     // O item especificado não foi encontrado na lista.
     return;
   }
-
   ShoppingItem itemToEdit = items[itemIndex];
-
   // Controladores para os campos de texto no diálogo de edição.
   TextEditingController itemNameController = TextEditingController(text: itemToEdit.name);
   TextEditingController itemQuantityController = TextEditingController(text: itemToEdit.quantity.toString());
-
   showDialog(
     context: context,
     builder: (context) {
@@ -247,15 +233,12 @@ void _addItemToList(String listName) {
     },
   );
 }
-
-
 void _removeItemFromList(String listName, String itemName) {
   // Verifica se a lista existe
   if (!shoppingLists.containsKey(listName)) {
     // A lista especificada não existe
     return;
   }
-
   List<ShoppingItem>? items = shoppingLists[listName];
   // Encontra o índice do item específico dentro da lista, baseado no nome
   int itemIndex = items!.indexWhere((item) => item.name == itemName);
@@ -266,19 +249,15 @@ void _removeItemFromList(String listName, String itemName) {
     });
   }
 }
-
-
 void _toggleItemBought(String listName, String itemName, bool isBought) {
   // Verifica se a lista existe
   if (!shoppingLists.containsKey(listName)) {
     // A lista especificada não existe
     return;
   }
-
   List<ShoppingItem> items = shoppingLists[listName]!;
   // Encontra o item específico dentro da lista
   int itemIndex = items.indexWhere((item) => item.name == itemName);
-
   if (itemIndex != -1) {
     // Se o item for encontrado, alterna o estado de 'comprado'
     setState(() {
@@ -286,20 +265,16 @@ void _toggleItemBought(String listName, String itemName, bool isBought) {
     });
   }
 }
-
   void _searchForItem(String query) {
     List<ShoppingItem> results = [];
-
     shoppingLists.forEach((listName, items) {
       // Filtra os itens que contêm a query no nome e adiciona à lista de resultados
       results.addAll(items.where((item) => item.name.toLowerCase().contains(query.toLowerCase())));
     });
-
     setState(() {
       searchResults = results; // Atualiza a lista de resultados de pesquisa.
     });
   }
-
   @override
   Widget build(BuildContext context) {
     // Aqui construímos a UI. A ListView.builder vai iterar sobre as chaves do mapa shoppingLists.
@@ -342,12 +317,10 @@ void _toggleItemBought(String listName, String itemName, bool isBought) {
                   ),
                 ),
               );
-
             },
           );
         },
       ),
-
       floatingActionButton: FloatingActionButton(
         onPressed: _createNewShoppingList,
         tooltip: 'Criar Lista',

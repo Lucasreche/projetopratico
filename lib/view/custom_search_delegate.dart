@@ -19,7 +19,6 @@ class CustomSearchDelegate extends SearchDelegate<ShoppingItem> {
         ),
     ];
   }
-
 @override
 Widget buildLeading(BuildContext context) {
   return IconButton(
@@ -29,7 +28,6 @@ Widget buildLeading(BuildContext context) {
     },
   );
 }
-
   @override
   Widget buildResults(BuildContext context) {
     List<ShoppingItem> results = [];
@@ -38,7 +36,6 @@ Widget buildLeading(BuildContext context) {
         (item) => item.name.toLowerCase().contains(query.toLowerCase()),
       ));
     });
-
     return ListView(
       children: results.map((item) => ListTile(
         title: Text(item.name),
@@ -50,7 +47,6 @@ Widget buildLeading(BuildContext context) {
       )).toList(),
     );
   }
-
   @override
   Widget buildSuggestions(BuildContext context) {
     List<ShoppingItem> suggestions = [];
@@ -59,7 +55,6 @@ Widget buildLeading(BuildContext context) {
         (item) => item.name.toLowerCase().contains(query.toLowerCase()),
       ));
     });
-
     return ListView(
       children: suggestions.map((item) => ListTile(
         title: Text(item.name),

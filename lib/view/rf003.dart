@@ -6,11 +6,9 @@ class RF003 extends StatefulWidget {
   @override
   State<RF003> createState() => _RF003State();
 }
-
 class _RF003State extends State<RF003> {
   final TextEditingController _emailController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
   void _sendPasswordResetRequest() {
     if (_formKey.currentState!.validate()) {
       // Aqui você pode implementar a lógica de envio de email
