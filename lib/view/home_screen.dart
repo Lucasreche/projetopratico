@@ -280,10 +280,17 @@ void _toggleItemBought(String listName, String itemName, bool isBought) {
                     },
                     onEditItem: (editedItem, index) {
                     }, 
+              
                   ),
                 ),
               );
             },
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(onPressed: (){}, icon: const Icon(Icons.edit)),
+                IconButton(onPressed: (){}, icon: const Icon(Icons.delete)),
+            ],),
           );
         },
       ),

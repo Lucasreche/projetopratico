@@ -85,7 +85,14 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
           return ListTile(
             title: Text(item.name),
             subtitle: Text("Quantidade: ${item.quantity}"),
-            trailing: Icon(item.isBought ? Icons.check : Icons.shopping_cart),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(onPressed: (){}, icon: const Icon(Icons.edit)),
+                IconButton(onPressed: (){}, icon: const Icon(Icons.delete)),
+                IconButton(onPressed: (){}, icon: const Icon(Icons.shopping_cart)),
+                
+            ],), 
             onTap: () => _showEditItemDialog(item, index),
           );
         },
