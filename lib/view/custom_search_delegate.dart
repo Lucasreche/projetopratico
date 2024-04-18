@@ -3,9 +3,7 @@ import 'shopping_item.dart';
 
 class CustomSearchDelegate extends SearchDelegate<ShoppingItem> {
   final Map<String, List<ShoppingItem>> shoppingLists;
-
   CustomSearchDelegate(this.shoppingLists);
-
   @override
   List<Widget> buildActions(BuildContext context) {
     return [

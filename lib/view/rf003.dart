@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class RF003 extends StatefulWidget {
   const RF003({super.key});
-
   @override
   State<RF003> createState() => _RF003State();
 }
@@ -23,7 +22,6 @@ class _RF003State extends State<RF003> {
       );
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +67,6 @@ class _RF003State extends State<RF003> {
       ),
     );
   }
-
   @override
   void dispose() {
     _emailController.dispose();

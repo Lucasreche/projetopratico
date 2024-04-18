@@ -5,8 +5,6 @@ import 'package:projetopratico/view/home_screen.dart';
 import 'package:projetopratico/view/rf002.dart';
 import 'package:projetopratico/view/rf003.dart';
 import 'package:projetopratico/view/rf004.dart';
-
-
 void main() {
   runApp(
     DevicePreview(
@@ -15,10 +13,8 @@ void main() {
     ),
   );
 }
-
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,21 +24,15 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-
 class PrincipalView extends StatefulWidget {
   const PrincipalView({super.key});
-
   @override
   State<PrincipalView> createState() => _PrincipalViewState();
 }
-
 class _PrincipalViewState extends State<PrincipalView> {
-
   var formKey = GlobalKey<FormState>();
-
   var txtValor1 = TextEditingController();
   var txtValor2 = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +50,6 @@ class _PrincipalViewState extends State<PrincipalView> {
                       width: 400,
                       height: 200,
                     ),
-
                 Text(
                   'Login',
                   style: TextStyle(
@@ -91,7 +80,6 @@ class _PrincipalViewState extends State<PrincipalView> {
                     return null;
                   },
                 ),
-
                 SizedBox(height: 25),
                 TextFormField(
                   controller: txtValor2,
@@ -101,9 +89,6 @@ class _PrincipalViewState extends State<PrincipalView> {
                     labelText: 'Digite sua senha',
                     border: OutlineInputBorder(),
                   ),
-                  //
-                  // Validação
-                  //
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Informe uma senha';
@@ -115,7 +100,6 @@ class _PrincipalViewState extends State<PrincipalView> {
                     return null;
                   },
                 ),
-
                 SizedBox(height: 25),
                 SizedBox(height: 20), 
                 ElevatedButton(

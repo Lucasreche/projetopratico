@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class RF004 extends StatefulWidget {
   const RF004({super.key});
   @override
@@ -33,7 +32,6 @@ class _RF004State extends State<RF004> {
               width: 400,
               height: 200,
             ),
-
             const Text(
               'Versão: 1.0.0',
               textAlign: TextAlign.center,
