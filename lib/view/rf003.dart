@@ -11,7 +11,6 @@ class _RF003State extends State<RF003> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   void _sendPasswordResetRequest() {
     if (_formKey.currentState!.validate()) {
-      // Aqui você pode implementar a lógica de envio de email
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text(

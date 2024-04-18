@@ -37,14 +37,9 @@ class PrincipalView extends StatefulWidget {
 }
 
 class _PrincipalViewState extends State<PrincipalView> {
-  //
-  // Atributos
-  //
 
-  //Identificador do formulário
   var formKey = GlobalKey<FormState>();
 
-  //Controladores dos campos de texto
   var txtValor1 = TextEditingController();
   var txtValor2 = TextEditingController();
 
@@ -58,29 +53,23 @@ class _PrincipalViewState extends State<PrincipalView> {
               child: Form(
                 key: formKey,
                 child: Column(
-                  mainAxisSize: MainAxisSize.max, // Assegura que a Column ocupe o máximo de espaço
+                  mainAxisSize: MainAxisSize.max, 
                   children: [
                     Image.asset(
                       'lib/imagens/logo01.jpg',
                       width: 400,
                       height: 200,
                     ),
-                ////
-                //// Adicionar o Texto "Login"
-                ////
+
                 Text(
                   'Login',
                   style: TextStyle(
-                    // Estilos do texto "Login"
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 255, 140, 0), 
                     fontFamily: 'BerlinSansFB',
                   ),
                 ),
-                //
-                // CAMPO DE TEXTO
-                //
                 TextFormField(
                   controller: txtValor1,
                   style: TextStyle(fontSize: 16),
@@ -88,14 +77,10 @@ class _PrincipalViewState extends State<PrincipalView> {
                     labelText: 'Digite seu email',
                     border: OutlineInputBorder(),
                   ),
-                  //
-                  // Validação
-                  //
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                     return 'Informe um e-mail válido';
                     } else {
-                      // Expressão regular para validação de e-mail
                       const pattern = r'\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b';
                       final regExp = RegExp(pattern);
 
@@ -103,7 +88,6 @@ class _PrincipalViewState extends State<PrincipalView> {
                         return 'Informe um e-mail válido';
                       }
                     }
-                    // Retornar null significa que o campo foi validado com sucesso!
                     return null;
                   },
                 ),
@@ -128,18 +112,12 @@ class _PrincipalViewState extends State<PrincipalView> {
                     } else if (!RegExp(r'^\d{6}$').hasMatch(value)) {
                       return 'Use apenas números na senha';
                     }
-                    // Retornar null significa que o campo foi validado com sucesso!
                     return null;
                   },
                 ),
 
                 SizedBox(height: 25),
-                SizedBox(height: 20), // Espaço vertical entre os botões
-                
-                //
-                // BOTÃO
-                //
-                //ElevatedButton, OutlinedButton, TextButton
+                SizedBox(height: 20), 
                 ElevatedButton(
   style: ElevatedButton.styleFrom(
     backgroundColor: Color.fromARGB(255, 255, 140, 0),
@@ -149,10 +127,7 @@ class _PrincipalViewState extends State<PrincipalView> {
   onPressed: () {
     // Validação dos campos
     if (formKey.currentState!.validate()) {
-      // Aqui você pode incluir a lógica de verificação do email e senha
-
-      // Se a verificação for bem-sucedida, navegue para a HomeScreen
-      Navigator.pushReplacement( // Esta linha foi alterada para usar pushReplacement
+      Navigator.pushReplacement( 
         context,
         MaterialPageRoute(builder: (context) => HomeScreen()),
       );
@@ -163,14 +138,10 @@ class _PrincipalViewState extends State<PrincipalView> {
     style: TextStyle(fontSize: 24, fontFamily: 'BerlinSansFB'),
   ),
 ),
-
-
-                SizedBox(height: 40), // Espaço vertical entre os botões
-                
-
+                SizedBox(height: 40), 
                 TextButton(
                   style: TextButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 17, 69, 190), // Cor do texto
+                    foregroundColor: Color.fromARGB(255, 17, 69, 190), 
                     textStyle: TextStyle(fontSize: 16),
                     minimumSize: Size(150, 40),
                   ),
@@ -190,16 +161,15 @@ class _PrincipalViewState extends State<PrincipalView> {
                     minimumSize: Size(150, 40),
                   ),
                   onPressed: () {
-                    // Navegação para a tela RF003
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RF003()), // Substitua RF003 pelo widget correto se necessário
+                      MaterialPageRoute(builder: (context) => RF003()), 
                     );
                   },
                   child: Text('Esqueci minha senha'),
                 ),
 
-              Expanded(child: Container()), // Isso empurra tudo para cima
+              Expanded(child: Container()), 
             ],
           ),
         ),
@@ -211,7 +181,7 @@ class _PrincipalViewState extends State<PrincipalView> {
           child: Align(
             alignment: Alignment.bottomCenter,
               child: Container(
-                height: 50, // Altura total do container, metade ficará "submersa"
+                height: 50, 
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 246, 212, 171),
                   borderRadius: BorderRadius.only(
@@ -222,18 +192,17 @@ class _PrincipalViewState extends State<PrincipalView> {
                 child: Center(
                   child: TextButton(
                     onPressed: () {
-                      // Navegar para a tela RF004
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => RF004()),
                       );
                     },
                     style: TextButton.styleFrom(
-                      foregroundColor: Color.fromARGB(255, 255, 128, 0), // Cor do texto do botão
+                      foregroundColor: Color.fromARGB(255, 255, 128, 0), 
                       textStyle: TextStyle(fontSize: 16, fontFamily: 'BerlinSansFB'), 
-                      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0), // Espaçamento interno do botão
+                      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0), 
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20), // Bordas arredondadas do botão
+                        borderRadius: BorderRadius.circular(20), 
                       ),
                     ),
                     child: Text("Sobre o App EasyList"),

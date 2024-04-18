@@ -8,17 +8,16 @@ class RF004 extends StatefulWidget {
 class _RF004State extends State<RF004> {
   @override
   Widget build(BuildContext context) {
-    // Obtém a largura da tela
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sobre o App'),
       ),
-      body: SingleChildScrollView( // Adiciona suporte a rolagem
-        padding: const EdgeInsets.all(20.0), // Espaçamento interno para todo o corpo
+      body: SingleChildScrollView( 
+        padding: const EdgeInsets.all(20.0), 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Texto sobre o app
             const Text(
               'Desenvolvido pelo aluno Lucas Juliano Reche, como atividade prática da matéria de Programação Para Dispositivos Moveis,'
               ' ministrado pelo Prof. Rodrigo de Oliveira Plotze.\n\n'
@@ -28,20 +27,17 @@ class _RF004State extends State<RF004> {
               textAlign: TextAlign.justify,
               style: TextStyle(fontSize: 16, fontFamily: 'BerlinSansFB'),
             ),
-            // Espaço opcional entre o texto e a imagem, pode ser ajustado conforme necessário
             const SizedBox(height: 120),
-            // Imagem
             Image.asset(
               'lib/imagens/logo01.jpg',
               width: 400,
               height: 200,
             ),
-            // Versão do app
+
             const Text(
               'Versão: 1.0.0',
               textAlign: TextAlign.center,
             ),
-            // Espaçamento no final
             const SizedBox(height: 20),
           ],
         ),

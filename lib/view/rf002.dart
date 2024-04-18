@@ -122,15 +122,14 @@ class _RF002State extends State<RF002> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    // Implemente a lógica de cadastro aqui
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text(
                           'Cadastro Efetuado!\nRetorne e faça seu login.',
                           textAlign: TextAlign.center,
-                          style: TextStyle(height: 1.5), // Aumenta o espaçamento entre as linhas, se necessário
+                          style: TextStyle(height: 1.5), 
                         ),
-                        behavior: SnackBarBehavior.floating, // Faz o SnackBar flutuar acima dos outros widgets
+                        behavior: SnackBarBehavior.floating, 
                       ),
                     );
                   }
