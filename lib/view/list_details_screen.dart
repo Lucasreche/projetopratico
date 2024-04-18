@@ -90,6 +90,7 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
           );
         },
       ),
+      
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
